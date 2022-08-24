@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 
 
 export default function TextForm(props) {
+    const [text, setText] =useState("");
     const handleOnUpClick = ()=>{
         const NewText = text.toUpperCase();
         setText(NewText)
@@ -14,7 +15,14 @@ export default function TextForm(props) {
     const handleOnChange = (event)=>{
         setText(event.target.value);
     }
-    const [text, setText] =useState("");
+    const handleOnColorClick = (event)=>{
+        var colors = ['#ff0000', '#00ff00', '#0000ff'];
+        var random_color = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById("exampleFormControlTextarea1").style.color = random_color;
+
+    }
+    
+
 
   return (
     <>
@@ -26,6 +34,7 @@ export default function TextForm(props) {
         </div>
         <button className="btn btn-primary mx-1" onClick={handleOnUpClick}>Convert to UperCase</button>
         <button className="btn btn-secondary mx-1" onClick={handleOnLoClick}>Convert to LowerCase</button>
+        <button className="btn btn-danger mx-1" onClick={handleOnColorClick}>change Text Colour</button>
         </div>
         <div className="container my-3">
             <h2>Your Text Summary</h2>
