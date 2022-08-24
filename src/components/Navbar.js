@@ -34,6 +34,6 @@ Navbar.prototype = {
 //it set default value for props in function if not set it
 Navbar.defaultProps ={
   title : "Set title here",
-  AboutText : "Set title here"
+  AboutText : "About Us"
 
 }
