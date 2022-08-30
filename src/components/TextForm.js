@@ -21,6 +21,13 @@ export default function TextForm(props) {
         document.getElementById("exampleFormControlTextarea1").style.color = random_color;
 
     }
+    const handleCopyText = ()=>{
+        var copyText = document.getElementById('myBox');
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+        alert("Copied the text: " + copyText.value);
+    }
     
 
 
@@ -30,11 +37,12 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <div className="mb-3">
         <label for="boxText" className="form-label">{props.labelText}</label>
-        <textarea onChange={handleOnChange} className="form-control" value={text} id="exampleFormControlTextarea1" rows="8"></textarea>
+        <textarea onChange={handleOnChange} className="form-control" value={text} id="myBox" rows="8"></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleOnUpClick}>Convert to UperCase</button>
         <button className="btn btn-secondary mx-1" onClick={handleOnLoClick}>Convert to LowerCase</button>
         <button className="btn btn-danger mx-1" onClick={handleOnColorClick}>change Text Colour</button>
+        <button className="btn btn-info mx-1" onClick={handleCopyText}>Copy Text</button>
         </div>
         <div className="container my-3">
             <h2>Your Text Summary</h2>
