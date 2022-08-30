@@ -13,7 +13,7 @@ export default function About(){
         if(ContainerStyle.color == "black" ){
             SetContainerStyle({
                 color : "white",
-                backgroundColor : "black",
+                backgroundColor : "black", 
                 border : "1px solid white"
             })
             setbtnText("Enable Light Mood")
