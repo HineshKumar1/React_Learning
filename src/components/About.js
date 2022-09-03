@@ -10,7 +10,7 @@ export default function About(){
         
             })
     const toggleStyle = ()=>{
-        if(ContainerStyle.color == "black" ){
+        if(ContainerStyle.color === "black" ){
             SetContainerStyle({
                 color : "white",
                 backgroundColor : "black", 

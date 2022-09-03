@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
 
-
 export default function TextForm(props) {
     const [text, setText] =useState("");
     const handleOnUpClick = ()=>{
@@ -15,11 +14,10 @@ export default function TextForm(props) {
     const handleOnChange = (event)=>{
         setText(event.target.value);
     }
-    const handleOnColorClick = (event)=>{
+    const handleOnColorClick = ()=>{
         var colors = ['#ff0000', '#00ff00', '#0000ff'];
         var random_color = colors[Math.floor(Math.random() * colors.length)];
         document.getElementById("exampleFormControlTextarea1").style.color = random_color;
-
     }
     const handleCopyText = ()=>{
         var copyText = document.getElementById('myBox');
@@ -28,16 +26,13 @@ export default function TextForm(props) {
         navigator.clipboard.writeText(copyText.value);
         alert("Copied the text: " + copyText.value);
     }
-    
-
-
   return (
     <>
-        <div className="container">
+        <div className="container" style={{color : props.mode ==='dark'?'white':'black'}}> 
         <h1>{props.heading}</h1>
         <div className="mb-3">
         <label for="boxText" className="form-label">{props.labelText}</label>
-        <textarea onChange={handleOnChange} className="form-control" value={text} id="myBox" rows="8"></textarea>
+        <textarea style={{backgroundColor: props.mode === 'dark'?'grey':'white'}} onChange={handleOnChange} className="form-control" value={text} id="myBox" rows="8"></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleOnUpClick}>Convert to UperCase</button>
         <button className="btn btn-secondary mx-1" onClick={handleOnLoClick}>Convert to LowerCase</button>
