@@ -5,11 +5,13 @@ export default function TextForm(props) {
     const [text, setText] =useState("");
     const handleOnUpClick = ()=>{
         const NewText = text.toUpperCase();
+        props.showAlert("Convert in Lower Case","success")
         setText(NewText)
     }
     const handleOnLoClick = ()=>{
         const NewText = text.toLowerCase();
         setText(NewText)
+        props.showAlert("Convert in Lower Case","success")
     }
     const handleOnChange = (event)=>{
         setText(event.target.value);
@@ -17,7 +19,7 @@ export default function TextForm(props) {
     const handleOnColorClick = ()=>{
         var colors = ['#ff0000', '#00ff00', '#0000ff'];
         var random_color = colors[Math.floor(Math.random() * colors.length)];
-        document.getElementById("exampleFormControlTextarea1").style.color = random_color;
+        document.getElementById("myBox").style.color = random_color;
     }
     const handleCopyText = ()=>{
         var copyText = document.getElementById('myBox');
@@ -25,6 +27,7 @@ export default function TextForm(props) {
         copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
         alert("Copied the text: " + copyText.value);
+        props.showAlert("Copied to Clipboard","success")
     }
   return (
     <>
