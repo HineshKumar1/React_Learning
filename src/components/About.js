@@ -1,13 +1,12 @@
-import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
+// import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 import React,{useState} from 'react'
 
-export default function About(){
+export default function AboutUs(){
     const [btnText, setbtnText] = useState("Enable Dark Mood")
 
     const [ContainerStyle , SetContainerStyle] = useState({
         color : "black",
         backgroundColor : "white",
-        
             })
     const toggleStyle = ()=>{
         if(ContainerStyle.color === "black" ){
