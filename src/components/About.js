@@ -1,7 +1,7 @@
 // import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 import React,{useState} from 'react'
 
-export default function AboutUs(){
+export default function AboutUs(props){
     const [btnText, setbtnText] = useState("Enable Dark Mood")
 
     const [ContainerStyle , SetContainerStyle] = useState({
@@ -44,7 +44,7 @@ export default function AboutUs(){
         <div className="accordion-item">
             <h2 className="accordion-header" id="headingTwo">
             <button className="accordion-button collapsed" style={ContainerStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
+                Current TextTile Colour 
             </button>
             </h2>
             <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -56,7 +56,7 @@ export default function AboutUs(){
         <div className="accordion-item">
             <h2 className="accordion-header" id="headingThree">
             <button className="accordion-button collapsed" style={ContainerStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
+                About our Program
             </button>
             </h2>
             <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
